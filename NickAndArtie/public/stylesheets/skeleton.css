@@ -51,6 +51,7 @@
 
     .container .one-third.column                { width: 230px; }
 	.container .one-third.column.fat          	{ width: 400px; }
+	.container .one-third.column.fatest         { width: 630px; }
     .container .two-thirds.column               { width: 620px; }
 
     /* Offsets */
