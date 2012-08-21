@@ -170,6 +170,7 @@
     <Content Include="public\libraries\jPlayer\blue.monday\Copy of jplayer.blue.monday.css" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.css" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.jpg" />
+    <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.large.css" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.seeking.gif" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.video.play.png" />
     <Content Include="public\libraries\jPlayer\jplayer.playlist.min.js" />
@@ -222,6 +223,7 @@
     <Content Include="Views\Gear\Index.cshtml" />
     <Content Include="Views\Shared\PodcastSmall.cshtml" />
     <Content Include="Views\Shared\PodcastLarge.cshtml" />
+    <Content Include="Views\Shared\Advertisement.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
