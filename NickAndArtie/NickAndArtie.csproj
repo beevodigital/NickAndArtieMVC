@@ -167,6 +167,7 @@
     <Content Include="public\javascripts\jquery.smoothDivScroll.js" />
     <Content Include="public\javascripts\slides.min.jquery.js" />
     <Content Include="public\javascripts\tabs.js" />
+    <Content Include="public\libraries\jPlayer\blue.monday\Copy of jplayer.blue.monday.css" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.css" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.jpg" />
     <Content Include="public\libraries\jPlayer\blue.monday\jplayer.blue.monday.seeking.gif" />
@@ -219,6 +220,7 @@
     <Content Include="Views\Meet\Index.cshtml" />
     <Content Include="Views\ContactUs\Index.cshtml" />
     <Content Include="Views\Gear\Index.cshtml" />
+    <Content Include="Views\Shared\PodcastSmall.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
