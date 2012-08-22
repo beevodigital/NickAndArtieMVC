@@ -253,6 +253,11 @@ body{
 	padding:25px 0 25px 0;
 }
 
+.feature-column-item a
+{
+    color:#fff;
+}
+
 .feature-column-item img
 {
 	width:317px;
@@ -320,6 +325,119 @@ body{
 	width:35px;
 }
 /*** end of Twitter ***/
+
+/*** meet-module ***/
+.meet-module
+{
+	background-image:url('../images/background_opaque.png');
+	width:600px;
+	margin:15px 0 0 12px;
+	padding:0 5px 5px 5px;
+	font-size:9pt;
+}
+.meet-module-heading
+{
+	background-image:url('../images/twitterhead.png');
+	width:189px;
+	height:61px;
+	margin-left:200px;
+}
+
+.meet-module-arrow
+{
+	background-image:url('../images/header_arrow_trans.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	height:10px;
+}
+.meet-module-body
+{
+	text-align:center;
+	background-image:url('../images/content-background.png');
+	height:600px;
+}
+
+#meet-body
+{
+	height:550px;
+}
+.meet-module-body a
+{
+	color:#999;
+}
+.meet-footer
+{
+	background-image:url('../images/background_opaque.png');
+}
+
+.bio-column
+{
+    width:280px;
+    float:left;
+    margin:10px;
+}
+/*** end of meet-module ***/
+
+/*** post-module ***/
+.post-module
+{
+	background-image:url('../images/background_opaque.png');
+	width:600px;
+	margin:15px 0 0 12px;
+	padding:0 5px 5px 5px;
+	font-size:9pt;
+}
+.post-module-heading
+{
+	height:61px;
+}
+
+.post-module-heading h1
+{
+	color:#fff;
+	font-size:20pt;
+	padding:10px 0 5px 0;
+}
+.post-module-heading h2
+{
+	color:#999;
+	font-size:16pt;
+	padding:0 0 0 0;
+}
+
+.post-module-arrow
+{
+	background-image:url('../images/header_arrow_trans.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	height:10px;
+}
+.post-module-body
+{
+	text-align:center;
+	background-image:url('../images/content-background.png');
+	clear:both;
+}
+
+#post-body
+{
+	clear:both;
+}
+.post-module-body a
+{
+	color:#999;
+}
+.post-footer
+{
+	background-image:url('../images/background_opaque.png');
+}
+
+.post-column
+{
+    width:560px;
+    margin:10px;
+}
+/*** end of post-module ***/
 
 @media only screen and (max-width: 767px) {
 	.Navigation{

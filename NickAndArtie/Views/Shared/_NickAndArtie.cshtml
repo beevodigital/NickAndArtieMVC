@@ -40,7 +40,7 @@
 				<ul>
 					<li><a href="/podcasts">Podcasts+Video</a></li>
 					<li><a href="/findus">Find Us</a></li>
-					<li><a href="/gear">Nick & Artie Gear</a></li>
+					<li><a href="http://www.nickandartiestuff.com/" target="_blank">Nick & Artie Gear</a></li>
 					<li><a href="/meet">Meet Nick & Artie</a></li>
 					<li><a href="/contactus">Contact Us</a></li>
 				</ul>
@@ -60,6 +60,7 @@
 	<script src="/public/javascripts/jquery.popupWindow.js"></script>  
 	<script src="/public/libraries/jPlayer/jquery.jplayer.min.js"></script>
 	<script src="/public/libraries/jPlayer/jplayer.playlist.min.js"></script>
+    <script src="/public/javascripts/jquery.equalheights.js"></script>
 	
 			<script type="text/javascript">
 			    $('#ListenLiveWindow').popupWindow({
@@ -133,6 +134,8 @@
 			        });
 			    })(jQuery);
 			</script>
-			@{ Html.RenderPartial("PodcastSmall"); }
+            @RenderSection("Playlist", false)
+
+            
 </body>
 </html>

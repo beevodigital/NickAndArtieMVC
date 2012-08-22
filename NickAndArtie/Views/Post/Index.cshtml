@@ -9,6 +9,16 @@
 @section Playlist{
     @{ Html.RenderPartial("Playlist"); }
 }
+
+<div id="fb-root"></div>
+<script>    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=203096113107701";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
 <div class="sixteen columns">
 		
 		<div class="banner-ad">
@@ -33,34 +43,26 @@
 	</div>
 	<div class="row">
       <div class="one-third column side-column side-column-left fatest">
-		<div class="meet-module">
-			<div class="meet-module-heading">
+		<div class="post-module">
+			<div class="post-module-heading">
+                <h1>This is a heading</h1>
+                <h2>This is a sub heading</h2>
 			</div>
-			<div class="meet-module-body">
+			<div class="post-module-body">
 				<div class="meet-module-arrow">
 				</div>
-				<div id="meet-body">
-                    <div class="bio-column">
+				<div id="post-body">
+                    <div class="post-column">
                         <div>
                             <img src="/public/images/img_placeholder.jpg" />
                         </div>
                         <div>
-                            <img src="/public/images/img_placeholder.jpg"  height="70px"/>
-                        </div>
-                        <div>
                             Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit 
                         </div>
-                    </div>
-                    <div class="bio-column">
-                        <div>
-                            <img src="/public/images/img_placeholder.jpg" />
-                        </div>
-                        <div>
-                            <img src="/public/images/img_placeholder.jpg"  height="70px"/>
-                        </div>
-                        <div>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit 
-                        </div>
+
+                        <div class="share"></div>
+                        <br />
+                        <div class="fb-comments" data-href="http://www.nickandartie.com" data-num-posts="2" data-width="560" data-colorscheme="dark"></div>
                     </div>
 				</div>
 			</div>

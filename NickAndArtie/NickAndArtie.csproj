@@ -110,6 +110,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -161,6 +162,7 @@
     <Content Include="public\images\v29.png" />
     <Content Include="public\images\v30.png" />
     <Content Include="public\javascripts\jquery-ui-1.8.18.custom.min.js" />
+    <Content Include="public\javascripts\jquery.equalheights.js" />
     <Content Include="public\javascripts\jquery.fitvids.js" />
     <Content Include="public\javascripts\jquery.mousewheel.min.js" />
     <Content Include="public\javascripts\jquery.popupWindow.js" />
@@ -224,6 +226,8 @@
     <Content Include="Views\Shared\PodcastSmall.cshtml" />
     <Content Include="Views\Shared\PodcastLarge.cshtml" />
     <Content Include="Views\Shared\Advertisement.cshtml" />
+    <Content Include="Views\Post\Index.cshtml" />
+    <Content Include="Views\Shared\PlayList.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
