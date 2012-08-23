@@ -202,6 +202,25 @@ body{
 {
 	background-image:url('../images/content-background.png');
 }
+
+.road-item
+{
+    padding:5px 5px 5px 5px;
+    font-size:10pt;
+    border-bottom:1px solid #999;
+    
+}
+
+.road-item strong
+{
+    font-size:11pt;
+}
+
+.road-item a
+{
+    color:#fff;
+    text-decoration:none;
+}
 /*** end of road-module ***/
 
 /*** shows-module ***/
@@ -354,7 +373,7 @@ body{
 {
 	text-align:center;
 	background-image:url('../images/content-background.png');
-	height:600px;
+	height:1050px;
 }
 
 #meet-body
@@ -373,6 +392,14 @@ body{
 .bio-column
 {
     width:280px;
+    float:left;
+    margin:10px;
+}
+
+.bio-column-wide
+{
+    margin-top:25px;
+    width:560px;
     float:left;
     margin:10px;
 }
