@@ -73,7 +73,7 @@ div.jp-video-full div.jp-interface {
 
 div.jp-interface {
 	position: relative;
-	background-color:#eee;
+	background-color:#333;
 	width:100%;
 }
 
@@ -388,7 +388,7 @@ div.jp-title li {
 }
 div.jp-playlist li {
 	padding:5px 0 4px 20px;
-	border-bottom:1px solid #eee;
+	border-bottom:1px solid #333;
 	margin:0 0 0 0;
 }
 
@@ -609,7 +609,7 @@ a.jp-shuffle-off:hover {
 
 	padding:5px;
 	font-size:.8em;
-	background-color:#eee;
+	background-color:#333;
 	border:2px solid #009be3;
 	color:#000;
 	display:none;

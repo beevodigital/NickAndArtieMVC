@@ -466,6 +466,55 @@ body{
 }
 /*** end of post-module ***/
 
+/*** row home  ***/
+.row
+{
+    background-image:url('/public/images/homepage-background.jpg');
+    background-repeat:repeat-y;
+    background-position:center;
+    clear:both;
+}
+/*** end of row home ***/
+
+/*** footer-container  ***/
+#footer-container
+{
+    height:193px;
+    background-image:url('/public/images/footer_text.jpg');
+    background-position:center;
+    background-repeat:no-repeat;
+    text-align:center;
+    color:#fff;
+}
+
+#footer-container img
+{
+    height:32px;
+    width:31px;
+    margin-top:5px;
+}
+
+#footer-container ul
+{
+	padding:115px 0 0 0;
+	text-align:center;
+	margin-left:210px;
+}
+
+#footer-container ul li
+{
+	float:left;
+	margin:0 0 0 15px;
+	font-size:10pt;
+}
+
+#footer-container ul li a
+{
+	color:#fff;
+	text-decoration:none;
+}
+/*** end of footer-container ***/
+
 @media only screen and (max-width: 767px) {
 	.Navigation{
 		height:600px;

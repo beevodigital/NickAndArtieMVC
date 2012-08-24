@@ -24,7 +24,6 @@
     .container                                  { position: relative; width: 910px; margin: 0 auto; padding: 0; }
     .container .column,
     .container .columns                         { float: left; display: inline; x_margin-left: 10px; x_margin-right: 10px; }
-    .row                                        { margin-bottom: 20px; }
 
     /* Nested Column Classes */
     .column.alpha, .columns.alpha               { margin-left: 0; }
