@@ -356,10 +356,12 @@ body{
 }
 .meet-module-heading
 {
-	background-image:url('../images/twitterhead.png');
-	width:189px;
+	background-image:url('../images/meethead.png');
+	width:236px;
 	height:61px;
 	margin-left:200px;
+	background-repeat:no-repeat;
+	background-position:center center;
 }
 
 .meet-module-arrow
@@ -394,6 +396,18 @@ body{
     width:280px;
     float:left;
     margin:10px;
+}
+
+.bio-column-guy-heading img
+{
+    width:149px;
+    height:20px;
+}
+
+.bio-column-twins-heading img
+{
+    width:425px;
+    height:20px;
 }
 
 .bio-column-wide
@@ -539,3 +553,43 @@ body{
 		position:relative;
 	}
 }
+
+/*** video-module ***/
+.video-module
+{
+	background-image:url('../images/background_opaque.png');
+	width:200px;
+	margin:15px 0 0 12px;
+	padding:0 5px 5px 5px;
+	font-size:9pt;
+}
+.video-module-heading
+{
+	background-image:url('../images/videohead.png');
+	width:189px;
+	height:61px;
+	background-repeat:no-repeat;
+	margin-left:65px;
+}
+
+.video-module-arrow
+{
+	background-image:url('../images/header_arrow_trans.png');
+	background-repeat:no-repeat;
+	background-position:center;
+	height:10px;
+}
+.video-module-body
+{
+	text-align:center;
+	background-image:url('../images/content-background.png');
+}
+.video-module-body a
+{
+	color:#999;
+}
+.video-footer
+{
+	background-image:url('../images/background_opaque.png');
+}
+/*** end of twitter-module ***/

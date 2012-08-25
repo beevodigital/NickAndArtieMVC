@@ -1,0 +1,106 @@
+﻿@model NickAndArtie.Models.Post
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Manage.cshtml";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Post</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HeadingShort)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HeadingShort)
+            @Html.ValidationMessageFor(model => model.HeadingShort)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AirDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AirDate)
+            @Html.ValidationMessageFor(model => model.AirDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionShort)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionShort)
+            @Html.ValidationMessageFor(model => model.DescriptionShort)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionLong)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionLong)
+            @Html.ValidationMessageFor(model => model.DescriptionLong)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageLarge)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageLarge)
+            @Html.ValidationMessageFor(model => model.ImageLarge)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageThumb)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageThumb)
+            @Html.ValidationMessageFor(model => model.ImageThumb)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HeadingLong)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HeadingLong)
+            @Html.ValidationMessageFor(model => model.HeadingLong)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HeadingSub)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HeadingSub)
+            @Html.ValidationMessageFor(model => model.HeadingSub)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Slug)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Slug)
+            @Html.ValidationMessageFor(model => model.Slug)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsActive)
+            @Html.ValidationMessageFor(model => model.IsActive)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

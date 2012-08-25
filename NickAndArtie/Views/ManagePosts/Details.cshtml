@@ -1,0 +1,86 @@
+﻿@model NickAndArtie.Models.Post
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Manage.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingShort)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingShort)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AirDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AirDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescriptionShort)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescriptionShort)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescriptionLong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescriptionLong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageLarge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageLarge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageThumb)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageThumb)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingLong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingLong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingSub)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingSub)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Slug)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Slug)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,88 @@
+﻿@model IEnumerable<NickAndArtie.Models.Post>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Manage.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadingShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AirDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionShort)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescriptionLong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLarge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageThumb)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadingLong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeadingSub)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slug)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeadingShort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AirDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionShort)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescriptionLong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageLarge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageThumb)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeadingLong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeadingSub)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slug)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

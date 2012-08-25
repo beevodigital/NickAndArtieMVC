@@ -1,0 +1,89 @@
+﻿@model NickAndArtie.Models.Post
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Manage.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Post</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingShort)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingShort)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AirDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AirDate)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescriptionShort)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescriptionShort)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DescriptionLong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DescriptionLong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageLarge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageLarge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageThumb)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageThumb)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingLong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingLong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HeadingSub)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HeadingSub)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Slug)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Slug)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsActive)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
