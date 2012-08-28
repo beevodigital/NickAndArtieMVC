@@ -9,5 +9,6 @@ namespace NickAndArtie.Models
     public class NickAndArtieDB : DbContext
     {
         public DbSet<Post> Posts { get; set; }
+        public DbSet<Podcast> Podcasts { get; set; }
     }
 }

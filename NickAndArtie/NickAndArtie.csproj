@@ -16,6 +16,10 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -123,6 +127,7 @@
     <Compile Include="Controllers\FindUsController.cs" />
     <Compile Include="Controllers\GearController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagePodcastsController.cs" />
     <Compile Include="Controllers\ManagePostsController.cs" />
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
@@ -138,8 +143,13 @@
     <Compile Include="Migrations\201208251551509_PostIsActive.Designer.cs">
       <DependentUpon>201208251551509_PostIsActive.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208272326078_Podcasts.cs" />
+    <Compile Include="Migrations\201208272326078_Podcasts.Designer.cs">
+      <DependentUpon>201208272326078_Podcasts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\NickAndArtieDB.cs" />
+    <Compile Include="Models\Podcast.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -157,10 +167,14 @@
     <Content Include="public\images\apple-touch-icon-114x114.png" />
     <Content Include="public\images\apple-touch-icon-72x72.png" />
     <Content Include="public\images\apple-touch-icon.png" />
+    <Content Include="public\images\artiehead.png" />
+    <Content Include="public\images\artiephoto.jpg" />
     <Content Include="public\images\Background-glow.jpg" />
     <Content Include="public\images\background_glow.jpg" />
     <Content Include="public\images\background_opaque.png" />
     <Content Include="public\images\bar-background-repeat.png" />
+    <Content Include="public\images\boxarrow.png" />
+    <Content Include="public\images\boxarrow_solid.png" />
     <Content Include="public\images\cambria.png" />
     <Content Include="public\images\center-content-bkg.png" />
     <Content Include="public\images\color-logo-no-glow.png" />
@@ -187,19 +201,26 @@
     <Content Include="public\images\Logo.png" />
     <Content Include="public\images\LogoGlow.png" />
     <Content Include="public\images\mCSB_buttons.png" />
+    <Content Include="public\images\meethead.png" />
+    <Content Include="public\images\nickhead.png" />
+    <Content Include="public\images\nickphoto.jpg" />
     <Content Include="public\images\photohead.png" />
     <Content Include="public\images\player-controls.jpg" />
     <Content Include="public\images\player.jpg" />
+    <Content Include="public\images\podcasthead.png" />
     <Content Include="public\images\roadhead.png" />
     <Content Include="public\images\sidead.jpg" />
     <Content Include="public\images\slider-1.jpg" />
     <Content Include="public\images\sliderimage.jpg" />
     <Content Include="public\images\tvpodcasthead.png" />
+    <Content Include="public\images\twinshead.png" />
+    <Content Include="public\images\twinsphoto.jpg" />
     <Content Include="public\images\twitter.png" />
     <Content Include="public\images\twitterhead.png" />
     <Content Include="public\images\v28.png" />
     <Content Include="public\images\v29.png" />
     <Content Include="public\images\v30.png" />
+    <Content Include="public\images\videohead.png" />
     <Content Include="public\javascripts\jquery-ui-1.8.18.custom.min.js" />
     <Content Include="public\javascripts\jquery.equalheights.js" />
     <Content Include="public\javascripts\jquery.fitvids.js" />
@@ -436,6 +457,8 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Properties\PublishProfiles\NickAndArtieMVC - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\NickAndArtieMVC - Web Deploy.pubxml" />
     <None Include="public\libraries\jPlayer\blue.monday\jPlayer_blue.monday_extd.psd" />
     <None Include="public\libraries\jPlayer\blue.monday\spirites_blue.monday_2011.psd" />
     <Content Include="Views\Podcasts\Index.cshtml" />
@@ -455,6 +478,12 @@
     <Content Include="Views\ManagePosts\Edit.cshtml" />
     <Content Include="Views\ManagePosts\Delete.cshtml" />
     <Content Include="Views\Shared\_Manage.cshtml" />
+    <Content Include="Views\ManagePodcasts\Index.cshtml" />
+    <Content Include="Views\ManagePodcasts\Details.cshtml" />
+    <Content Include="Views\ManagePodcasts\Create.cshtml" />
+    <Content Include="Views\ManagePodcasts\Edit.cshtml" />
+    <Content Include="Views\ManagePodcasts\Delete.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">
@@ -462,6 +491,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201208251551509_PostIsActive.resx">
       <DependentUpon>201208251551509_PostIsActive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208272326078_Podcasts.resx">
+      <DependentUpon>201208272326078_Podcasts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

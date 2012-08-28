@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<title>The Show - Award Submissions</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	
+	<link rel="stylesheet" href="/public/stylesheets/base.css">
+	<link rel="stylesheet" href="/public/stylesheets/skeleton.css">
+	<link rel="stylesheet" href="/public/stylesheets/layout.css">
+	
+	<link rel="stylesheet" href="/public/stylesheets/nanda.css">
+	<link rel="stylesheet" href="/public/libraries/ScrollBar/jquery.mCustomScrollbar.css">
+	
+    @RenderSection("PageCSS",false)
+	
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="Navigation">
+		<div class="centered-container">
+			<div class="logo">
+				<a href="/">
+					<img src="/public/images/logo.png">
+				</a>
+			</div>
+			<div class="listenlive">
+				<a href="/streaming-player/streaming-player.html" id="ListenLiveWindow">
+					<img src="/public/images/listenlive.png">
+				</a>
+			</div>
+			<div>
+				<ul>
+					<li><a href="/podcasts">Podcasts+Video</a></li>
+					<li><a href="http://www.nickandartiestuff.com/" target="_blank">Nick & Artie Gear</a></li>
+					<li><a href="/meet">Meet Nick & Artie</a></li>
+					<li><a href="/contactus">Contact Us</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<div class="container">
+	    @RenderBody() 
+
+        <div id="footer-container">
+            <ul>
+			    <li><a href="/podcasts">Podcasts+Video </a>&nbsp;|</li>
+			    <li><a href="http://www.nickandartiestuff.com/" target="_blank">Nick & Artie Gear </a>&nbsp;|</li>
+			    <li><a href="/meet">Meet Nick & Artie </a>&nbsp;|</li>
+			    <li><a href="/contactus">Contact Us</a></li>
+		    </ul>
+            <div>
+                <a href="" target="_blank"><img src="/public/images/twitter.png" /></a>&nbsp;&nbsp;
+                <a href="" target="_blank"><img src="/public/images/facebook.png" /></a>
+            </div>
+        </div>
+	</div>
+    
+	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+	<script src="/public/javascripts/slides.min.jquery.js"></script>
+	<script src="/public/libraries/twitter/jquery.tweet.js"></script>   
+	<script src="/public/libraries/ScrollBar/jquery.mousewheel.min.js"></script>
+	<script src="/public/libraries/ScrollBar/jquery.mCustomScrollbar.js"></script>
+	<script src="/public/javascripts/jquery.popupWindow.js"></script>  
+	<script src="/public/libraries/jPlayer/jquery.jplayer.min.js"></script>
+	<script src="/public/libraries/jPlayer/jplayer.playlist.min.js"></script>
+    <script src="/public/javascripts/jquery.equalheights.js"></script>
+	
+			<script type="text/javascript">
+			    $('#ListenLiveWindow').popupWindow({
+			        height: 320,
+			        width: 370,
+			        top: 50,
+			        left: 50
+			    }); 
+			</script>
+			<script>
+			    $(function () {
+			        $("#slideshow").slides({
+			            preload: true,
+			            pause: 1000,
+			            play: 3000,
+			            generatePagination: false
+			        });
+			    });
+
+			    jQuery(function ($) {
+			        $("#twitter-body").tweet({
+			            join_text: "auto",
+			            username: "nickandartie",
+			            avatar_size: 35,
+			            count: 5,
+			            loading_text: "loading tweets..."
+			        });
+			    });
+				
+			</script>
+			<script>
+			    (function ($) {
+			        $(window).load(function () {
+			            $("#PhotoReel").mCustomScrollbar({
+			                horizontalScroll: false,
+			                scrollButtons: {
+			                    enable: true,
+			                    scrollType: "pixels",
+			                    scrollAmount: 116
+			                }
+			            });
+
+
+			            function snapScrollbar() {
+			                if (!$(document).data("mCS-is-touch-device")) { //no snapping for touch devices
+			                    var posX = $("#content_2 .mCSB_container").position().left;
+			                    var closestX = findClosest(Math.abs(posX), snapTo);
+			                    if (closestX === 0) {
+			                        $("#content_2").mCustomScrollbar("scrollTo", "left", {
+			                            callback: false //scroll to is already a callback fn
+			                        });
+			                    } else {
+			                        $("#content_2").mCustomScrollbar("scrollTo", closestX, {
+			                            callback: false //scroll to is already a callback fn
+			                        });
+			                    }
+			                }
+			            }
+			            function findClosest(num, arr) {
+			                var curr = arr[0];
+			                var diff = Math.abs(num - curr);
+			                for (var val = 0; val < arr.length; val++) {
+			                    var newdiff = Math.abs(num - arr[val]);
+			                    if (newdiff < diff) {
+			                        diff = newdiff;
+			                        curr = arr[val];
+			                    }
+			                }
+			                return curr;
+			            }
+			        });
+			    })(jQuery);
+			</script>
+            @RenderSection("Playlist", false)
+
+            
+</body>
+</html>
