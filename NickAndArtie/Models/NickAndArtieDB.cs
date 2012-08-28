@@ -10,5 +10,7 @@ namespace NickAndArtie.Models
     {
         public DbSet<Post> Posts { get; set; }
         public DbSet<Podcast> Podcasts { get; set; }
+        public DbSet<PhotoReel> PhotoReels { get; set; }
+        public DbSet<RoadTrip> RoadTrips { get; set; }
     }
 }

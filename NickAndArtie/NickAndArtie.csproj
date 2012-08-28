@@ -127,8 +127,10 @@
     <Compile Include="Controllers\FindUsController.cs" />
     <Compile Include="Controllers\GearController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManagePhotoReelController.cs" />
     <Compile Include="Controllers\ManagePodcastsController.cs" />
     <Compile Include="Controllers\ManagePostsController.cs" />
+    <Compile Include="Controllers\ManageRoadTripsController.cs" />
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -147,10 +149,16 @@
     <Compile Include="Migrations\201208272326078_Podcasts.Designer.cs">
       <DependentUpon>201208272326078_Podcasts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208281812379_PhotoReels.cs" />
+    <Compile Include="Migrations\201208281812379_PhotoReels.Designer.cs">
+      <DependentUpon>201208281812379_PhotoReels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\NickAndArtieDB.cs" />
+    <Compile Include="Models\PhotoReel.cs" />
     <Compile Include="Models\Podcast.cs" />
     <Compile Include="Models\Post.cs" />
+    <Compile Include="Models\RoadTrip.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -484,6 +492,16 @@
     <Content Include="Views\ManagePodcasts\Edit.cshtml" />
     <Content Include="Views\ManagePodcasts\Delete.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\ManageRoadTrips\Index.cshtml" />
+    <Content Include="Views\ManageRoadTrips\Details.cshtml" />
+    <Content Include="Views\ManageRoadTrips\Create.cshtml" />
+    <Content Include="Views\ManageRoadTrips\Edit.cshtml" />
+    <Content Include="Views\ManageRoadTrips\Delete.cshtml" />
+    <Content Include="Views\ManagePhotoReel\Index.cshtml" />
+    <Content Include="Views\ManagePhotoReel\Details.cshtml" />
+    <Content Include="Views\ManagePhotoReel\Create.cshtml" />
+    <Content Include="Views\ManagePhotoReel\Edit.cshtml" />
+    <Content Include="Views\ManagePhotoReel\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">
@@ -494,6 +512,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201208272326078_Podcasts.resx">
       <DependentUpon>201208272326078_Podcasts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208281812379_PhotoReels.resx">
+      <DependentUpon>201208281812379_PhotoReels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

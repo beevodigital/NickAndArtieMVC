@@ -1,0 +1,36 @@
+﻿@model NickAndArtie.Models.PhotoReel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>PhotoReel</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageThumb)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageThumb)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageLarge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageLarge)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
