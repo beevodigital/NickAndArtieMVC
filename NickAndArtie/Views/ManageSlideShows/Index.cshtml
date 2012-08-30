@@ -1,0 +1,45 @@
+﻿@model IEnumerable<NickAndArtie.Models.SlideShow>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Slideshow Listing</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageLarge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImageDestination)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsListenLive)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageLarge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImageDestination)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsListenLive)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

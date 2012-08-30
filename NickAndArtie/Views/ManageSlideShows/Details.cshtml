@@ -1,0 +1,36 @@
+﻿@model NickAndArtie.Models.SlideShow
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Slideshow Details</h2>
+
+<fieldset>
+    <legend>SlideShow</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageLarge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageLarge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageDestination)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageDestination)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsListenLive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsListenLive)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

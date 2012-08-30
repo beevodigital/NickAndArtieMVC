@@ -13,9 +13,10 @@ namespace NickAndArtie.Controllers
         //
         // GET: /Post/
 
-        public ActionResult Index()
+        public ActionResult Index(string id)
         {
             ViewBag.Podcasts = db.Podcasts.OrderByDescending(x => x.DatePublished).Take(15).ToList();
+            ViewBag.Post = db.Posts.Where(x => x.Slug.Equals(id)).FirstOrDefault();
             return View();
         }
 

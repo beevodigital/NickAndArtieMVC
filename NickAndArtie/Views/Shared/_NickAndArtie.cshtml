@@ -16,6 +16,8 @@
 	
 	<link rel="stylesheet" href="/public/stylesheets/nanda.css">
 	<link rel="stylesheet" href="/public/libraries/ScrollBar/jquery.mCustomScrollbar.css">
+
+    <link rel="stylesheet" href="/public/libraries/lightbox/css/jquery.lightbox-0.5.css">
 	
     @RenderSection("PageCSS",false)
 	
@@ -32,7 +34,7 @@
 				</a>
 			</div>
 			<div class="listenlive">
-				<a href="/streaming-player/streaming-player.html" id="ListenLiveWindow">
+				<a href="/streaming-player/streaming-player.html" class="ListenLiveWindow">
 					<img src="/public/images/listenlive.png">
 				</a>
 			</div>
@@ -73,16 +75,22 @@
 	<script src="/public/javascripts/jquery.popupWindow.js"></script>  
 	<script src="/public/libraries/jPlayer/jquery.jplayer.min.js"></script>
 	<script src="/public/libraries/jPlayer/jplayer.playlist.min.js"></script>
+    <script src="/public/libraries/lightbox/js/jquery.lightbox-0.5.min.js"></script>
     <script src="/public/javascripts/jquery.equalheights.js"></script>
 	
 			<script type="text/javascript">
-			    $('#ListenLiveWindow').popupWindow({
+			    $('.ListenLiveWindow').popupWindow({
 			        height: 320,
 			        width: 370,
 			        top: 50,
 			        left: 50
 			    }); 
 			</script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#PhotoReel a').lightBox(); // Select all links in object with gallery ID
+                    });
+            </script>
 			<script>
 			    $(function () {
 			        $("#slideshow").slides({

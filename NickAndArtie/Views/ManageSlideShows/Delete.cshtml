@@ -1,0 +1,39 @@
+﻿@model NickAndArtie.Models.SlideShow
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete Slideshow</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SlideShow</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageLarge)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageLarge)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ImageDestination)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ImageDestination)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsListenLive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsListenLive)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

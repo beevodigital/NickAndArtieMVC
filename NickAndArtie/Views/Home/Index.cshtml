@@ -36,12 +36,31 @@
 		
 		<div class="slideshow" id="slideshow">
 			<div class="slides_container">
-				<div>
-					<img src="/public/images/sliderimage.jpg">
-				</div>
-				<div>
-					<img src="/public/images/sliderimage.jpg">
-				</div>
+                @{
+                    var SlideShowImages = (List<NickAndArtie.Models.SlideShow>)ViewBag.SlideShowImages;
+                    
+                    foreach(var ThisItem in SlideShowImages)
+                    {
+                        if(ThisItem.IsListenLive)
+                        {
+                            <div>
+					            <a href="@(ThisItem.ImageDestination)" class="ListenLiveWindow"><img src="@(ThisItem.ImageLarge)"></a>
+				            </div>
+                        }
+                        else if(ThisItem.ImageDestination != "")
+                        {
+                            <div>
+					            <a href="@(ThisItem.ImageDestination)"><img src="@(ThisItem.ImageLarge)"></a>
+				            </div>
+                        }
+                        else
+                        {
+                            <div>
+					            <img src="@(ThisItem.ImageLarge)">
+				            </div>   
+                        }
+                    }
+                }
 			</div>
 		</div>
 	</div>
@@ -85,13 +104,17 @@
 			</div>
 			<div class="photo-module-body">
 				<div id="PhotoReel" class="content">
-					<div class="images_container">
-						<img src="/public/images/sidead.jpg" id="photo1"/>
-						<img src="/public/images/sidead.jpg" id="photo2"/>
-						<img src="/public/images/sidead.jpg" id="photo3"/>
-						<img src="/public/images/sidead.jpg" id="photo4"/>
-						<img src="/public/images/sidead.jpg" id="photo5"/>
-					</div>
+                    @{
+                        var ThisPhotoReel = (List<NickAndArtie.Models.PhotoReel>)ViewBag.PhotoReel;
+                        
+                        foreach(var ThisItem in ThisPhotoReel)
+                        {
+                            <div class="images_container">
+						        <a href="@(ThisItem.ImageLarge)"><img src="@(ThisItem.ImageThumb)"/></a>
+					        </div>
+                        }
+                    }
+					
 				</div>
 			</div>
 		</div>
@@ -100,62 +123,27 @@
 		<div class="feature-column-heading">
 			<img src="/public/images/hitlisttype.png">
 		</div>
-		<div class="feature-column-item">
-			<div>
-                <a href="/post">
-				    <img src="/public/images/img_placeholder.jpg">
-                </a>
-			</div>
-			<h3>
-				<a href="/post">ADAM SANDLER 5-23-12</a>
-			</h3>
-			<h4>
-				Adam weighs in on the newest movie and why he thinks tutrles are the coolest. Nick & Artie take some shots...<a href="/post">Read More</a>
-			</h4>
-		</div>
-		
-		
-        <div class="feature-column-item">
-			<div>
-                <a href="/post">
-				    <img src="/public/images/img_placeholder.jpg">
-                </a>
-			</div>
-			<h3>
-				<a href="/post">ADAM SANDLER 5-23-12</a>
-			</h3>
-			<h4>
-				Adam weighs in on the newest movie and why he thinks tutrles are the coolest. Nick & Artie take some shots...<a href="/post">Read More</a>
-			</h4>
-		</div>
 
-        <div class="feature-column-item">
-			<div>
-                <a href="/post">
-				    <img src="/public/images/img_placeholder.jpg">
-                </a>
-			</div>
-			<h3>
-				<a href="/post">ADAM SANDLER 5-23-12</a>
-			</h3>
-			<h4>
-				Adam weighs in on the newest movie and why he thinks tutrles are the coolest. Nick & Artie take some shots...<a href="/post">Read More</a>
-			</h4>
-		</div>
-
-        <div class="feature-column-item">
-			<div>
-                <a href="/post">
-				    <img src="/public/images/img_placeholder.jpg">
-                </a>
-			</div>
-			<h3>
-				<a href="/post">ADAM SANDLER 5-23-12</a>
-			</h3>
-			<h4>
-				Adam weighs in on the newest movie and why he thinks tutrles are the coolest. Nick & Artie take some shots...<a href="/post">Read More</a>
-			</h4>
-		</div>
+        @{
+            var ThesePosts = (List<NickAndArtie.Models.Post>)ViewBag.Posts;
+            foreach (var ThisItem in ThesePosts)
+            {
+                <div class="feature-column-item">
+			        <div>
+                        <a href="/post/@(ThisItem.Slug)">
+				            <img src="@(ThisItem.ImageThumb)">
+                        </a>
+			        </div>
+			        <h3>
+				        <a href="/post/@(ThisItem.Slug)">@(ThisItem.HeadingShort) - @(ThisItem.AirDate.ToShortDateString())</a>
+			        </h3>
+			        <h4>
+				        @(ThisItem.DescriptionShort)...<a href="/post/@(ThisItem.Slug)">Read More</a>
+			        </h4>
+		        </div>
+            }
+        }
+		
 		
       </div>     
       <div class="one-third column side-column">

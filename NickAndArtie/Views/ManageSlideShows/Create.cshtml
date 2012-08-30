@@ -1,0 +1,46 @@
+﻿@model NickAndArtie.Models.SlideShow
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a new Slideshow</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SlideShow</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageLarge)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="ImageLargeUpload" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageDestination)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageDestination)
+            @Html.ValidationMessageFor(model => model.ImageDestination)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsListenLive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsListenLive)
+            @Html.ValidationMessageFor(model => model.IsListenLive)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

@@ -12,5 +12,6 @@ namespace NickAndArtie.Models
         public DbSet<Podcast> Podcasts { get; set; }
         public DbSet<PhotoReel> PhotoReels { get; set; }
         public DbSet<RoadTrip> RoadTrips { get; set; }
+        public DbSet<SlideShow> SlideShows { get; set; }
     }
 }

@@ -13,7 +13,18 @@ namespace NickAndArtie
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            
+            routes.MapRoute(
+                name: "AdminHome",
+                url: "manage",
+                defaults: new { controller = "ManagePosts", action = "Index", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "PostDetail",
+                url: "post/{id}",
+                defaults: new { controller = "Post", action = "Index", id = UrlParameter.Optional }
+            );
+
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

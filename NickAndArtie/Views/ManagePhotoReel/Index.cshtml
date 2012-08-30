@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Photo Reel Listing</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -29,10 +29,11 @@
             @Html.DisplayFor(modelItem => item.Title)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageThumb)
+            <img src="@(item.ImageThumb)" width="250px" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageLarge)
+            <img src="@(item.ImageLarge)" width="250px" />
+
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |

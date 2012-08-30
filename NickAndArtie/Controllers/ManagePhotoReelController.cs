@@ -6,6 +6,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NickAndArtie.Models;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.StorageClient;
 
 namespace NickAndArtie.Controllers
 {
@@ -50,6 +52,32 @@ namespace NickAndArtie.Controllers
         {
             if (ModelState.IsValid)
             {
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]);
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                CloudBlobContainer container = blobClient.GetContainerReference("images");
+                container.CreateIfNotExist();
+                container.SetPermissions(
+                    new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }
+                );
+
+                if (Request.Files["ImageLargeUpload"].ContentLength > 0)
+                {
+                    string ThisGuid = Guid.NewGuid().ToString();
+                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    blob.Properties.ContentType = Request.Files["ImageLargeUpload"].ContentType;
+                    blob.UploadFromStream(Request.Files["ImageLargeUpload"].InputStream);
+                    photoreel.ImageLarge = blob.Uri.ToString();
+                }
+
+                if (Request.Files["ImageThumbUpload"].ContentLength > 0)
+                {
+                    string ThumbsGuid = Guid.NewGuid().ToString();
+                    CloudBlob thumbBlob = container.GetBlobReference(ThumbsGuid);
+                    thumbBlob.Properties.ContentType = Request.Files["ImageThumbUpload"].ContentType;
+                    thumbBlob.UploadFromStream(Request.Files["ImageThumbUpload"].InputStream);
+                    photoreel.ImageThumb = thumbBlob.Uri.ToString();
+                }
+
                 db.PhotoReels.Add(photoreel);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -79,6 +107,32 @@ namespace NickAndArtie.Controllers
         {
             if (ModelState.IsValid)
             {
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]);
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                CloudBlobContainer container = blobClient.GetContainerReference("images");
+                container.CreateIfNotExist();
+                container.SetPermissions(
+                    new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }
+                );
+
+                if (Request.Files["ImageLargeUpload"].ContentLength > 0)
+                {
+                    string ThisGuid = Guid.NewGuid().ToString();
+                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    blob.Properties.ContentType = Request.Files["ImageLargeUpload"].ContentType;
+                    blob.UploadFromStream(Request.Files["ImageLargeUpload"].InputStream);
+                    photoreel.ImageLarge = blob.Uri.ToString();
+                }
+
+                if (Request.Files["ImageThumbUpload"].ContentLength > 0)
+                {
+                    string ThumbsGuid = Guid.NewGuid().ToString();
+                    CloudBlob thumbBlob = container.GetBlobReference(ThumbsGuid);
+                    thumbBlob.Properties.ContentType = Request.Files["ImageThumbUpload"].ContentType;
+                    thumbBlob.UploadFromStream(Request.Files["ImageThumbUpload"].InputStream);
+                    photoreel.ImageThumb = thumbBlob.Uri.ToString();
+                }
+
                 db.Entry(photoreel).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

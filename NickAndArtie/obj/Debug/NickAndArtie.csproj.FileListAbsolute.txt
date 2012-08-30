@@ -36,5 +36,9 @@ C:\Projects\NickAndArtie\NickAndArtie\bin\System.Web.Optimization.dll
 C:\Projects\NickAndArtie\NickAndArtie\bin\WebGrease.dll
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.csproj.GenerateResource.Cache
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.Podcasts.resources
-C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.csprojResolveAssemblyReference.cache
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.PhotoReels.resources
+C:\Projects\NickAndArtie\NickAndArtie\bin\Microsoft.WindowsAzure.StorageClient.dll
+C:\Projects\NickAndArtie\NickAndArtie\bin\Microsoft.WindowsAzure.StorageClient.xml
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.csprojResolveAssemblyReference.cache
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.slidehsows.resources
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.slideshoworder.resources

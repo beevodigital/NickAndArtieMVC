@@ -46,6 +46,7 @@
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -131,6 +132,7 @@
     <Compile Include="Controllers\ManagePodcastsController.cs" />
     <Compile Include="Controllers\ManagePostsController.cs" />
     <Compile Include="Controllers\ManageRoadTripsController.cs" />
+    <Compile Include="Controllers\ManageSlideShowsController.cs" />
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -153,12 +155,21 @@
     <Compile Include="Migrations\201208281812379_PhotoReels.Designer.cs">
       <DependentUpon>201208281812379_PhotoReels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208300127338_slidehsows.cs" />
+    <Compile Include="Migrations\201208300127338_slidehsows.Designer.cs">
+      <DependentUpon>201208300127338_slidehsows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208300130127_slideshoworder.cs" />
+    <Compile Include="Migrations\201208300130127_slideshoworder.Designer.cs">
+      <DependentUpon>201208300130127_slideshoworder.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\NickAndArtieDB.cs" />
     <Compile Include="Models\PhotoReel.cs" />
     <Compile Include="Models\Podcast.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\RoadTrip.cs" />
+    <Compile Include="Models\SlideShow.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,6 +258,16 @@
     <Content Include="public\libraries\jPlayer\jplayer.playlist.min.js" />
     <Content Include="public\libraries\jPlayer\Jplayer.swf" />
     <Content Include="public\libraries\jPlayer\jquery.jplayer.min.js" />
+    <Content Include="public\libraries\lightbox\css\jquery.lightbox-0.5.css" />
+    <Content Include="public\libraries\lightbox\images\lightbox-blank.gif" />
+    <Content Include="public\libraries\lightbox\images\lightbox-btn-close.gif" />
+    <Content Include="public\libraries\lightbox\images\lightbox-btn-next.gif" />
+    <Content Include="public\libraries\lightbox\images\lightbox-btn-prev.gif" />
+    <Content Include="public\libraries\lightbox\images\lightbox-ico-loading.gif" />
+    <Content Include="public\libraries\lightbox\js\jquery.js" />
+    <Content Include="public\libraries\lightbox\js\jquery.lightbox-0.5.js" />
+    <Content Include="public\libraries\lightbox\js\jquery.lightbox-0.5.min.js" />
+    <Content Include="public\libraries\lightbox\js\jquery.lightbox-0.5.pack.js" />
     <Content Include="public\libraries\ScrollBar\jquery.mCustomScrollbar.css" />
     <Content Include="public\libraries\ScrollBar\jquery.mCustomScrollbar.js" />
     <Content Include="public\libraries\ScrollBar\jquery.mousewheel.min.js" />
@@ -449,9 +470,7 @@
     </Content>
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
@@ -502,6 +521,11 @@
     <Content Include="Views\ManagePhotoReel\Create.cshtml" />
     <Content Include="Views\ManagePhotoReel\Edit.cshtml" />
     <Content Include="Views\ManagePhotoReel\Delete.cshtml" />
+    <Content Include="Views\ManageSlideShows\Index.cshtml" />
+    <Content Include="Views\ManageSlideShows\Details.cshtml" />
+    <Content Include="Views\ManageSlideShows\Create.cshtml" />
+    <Content Include="Views\ManageSlideShows\Edit.cshtml" />
+    <Content Include="Views\ManageSlideShows\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">
@@ -515,6 +539,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201208281812379_PhotoReels.resx">
       <DependentUpon>201208281812379_PhotoReels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208300127338_slidehsows.resx">
+      <DependentUpon>201208300127338_slidehsows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208300130127_slideshoworder.resx">
+      <DependentUpon>201208300130127_slideshoworder.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
