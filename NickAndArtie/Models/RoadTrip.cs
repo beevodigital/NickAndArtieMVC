@@ -14,5 +14,6 @@ namespace NickAndArtie.Models
         public string Location { get; set; }
         public string Artist { get; set; }
         public string Title { get; set; }
+        public string URL { get; set; }
     }
 }

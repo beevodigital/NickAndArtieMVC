@@ -39,6 +39,8 @@ C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.Podcasts
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.PhotoReels.resources
 C:\Projects\NickAndArtie\NickAndArtie\bin\Microsoft.WindowsAzure.StorageClient.dll
 C:\Projects\NickAndArtie\NickAndArtie\bin\Microsoft.WindowsAzure.StorageClient.xml
-C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.csprojResolveAssemblyReference.cache
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.slidehsows.resources
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.slideshoworder.resources
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.cantrememerb.resources
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.YoutubeVideos.resources
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.updates.resources

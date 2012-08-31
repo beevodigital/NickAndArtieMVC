@@ -133,6 +133,7 @@
     <Compile Include="Controllers\ManagePostsController.cs" />
     <Compile Include="Controllers\ManageRoadTripsController.cs" />
     <Compile Include="Controllers\ManageSlideShowsController.cs" />
+    <Compile Include="Controllers\ManageYoutubeVideosController.cs" />
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
     <Compile Include="Controllers\PostController.cs" />
@@ -163,6 +164,18 @@
     <Compile Include="Migrations\201208300130127_slideshoworder.Designer.cs">
       <DependentUpon>201208300130127_slideshoworder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201208300227295_cantrememerb.cs" />
+    <Compile Include="Migrations\201208300227295_cantrememerb.Designer.cs">
+      <DependentUpon>201208300227295_cantrememerb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208310034412_YoutubeVideos.cs" />
+    <Compile Include="Migrations\201208310034412_YoutubeVideos.Designer.cs">
+      <DependentUpon>201208310034412_YoutubeVideos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201208310150524_updates.cs" />
+    <Compile Include="Migrations\201208310150524_updates.Designer.cs">
+      <DependentUpon>201208310150524_updates.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\NickAndArtieDB.cs" />
     <Compile Include="Models\PhotoReel.cs" />
@@ -170,6 +183,7 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\RoadTrip.cs" />
     <Compile Include="Models\SlideShow.cs" />
+    <Compile Include="Models\YoutubeVideo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -526,6 +540,11 @@
     <Content Include="Views\ManageSlideShows\Create.cshtml" />
     <Content Include="Views\ManageSlideShows\Edit.cshtml" />
     <Content Include="Views\ManageSlideShows\Delete.cshtml" />
+    <Content Include="Views\ManageYoutubeVideos\Index.cshtml" />
+    <Content Include="Views\ManageYoutubeVideos\Details.cshtml" />
+    <Content Include="Views\ManageYoutubeVideos\Create.cshtml" />
+    <Content Include="Views\ManageYoutubeVideos\Edit.cshtml" />
+    <Content Include="Views\ManageYoutubeVideos\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">
@@ -545,6 +564,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201208300130127_slideshoworder.resx">
       <DependentUpon>201208300130127_slideshoworder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208300227295_cantrememerb.resx">
+      <DependentUpon>201208300227295_cantrememerb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208310034412_YoutubeVideos.resx">
+      <DependentUpon>201208310034412_YoutubeVideos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201208310150524_updates.resx">
+      <DependentUpon>201208310150524_updates.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

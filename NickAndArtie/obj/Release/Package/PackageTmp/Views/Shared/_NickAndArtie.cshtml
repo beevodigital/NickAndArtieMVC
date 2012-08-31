@@ -16,6 +16,8 @@
 	
 	<link rel="stylesheet" href="/public/stylesheets/nanda.css">
 	<link rel="stylesheet" href="/public/libraries/ScrollBar/jquery.mCustomScrollbar.css">
+
+    <link rel="stylesheet" href="/public/libraries/lightbox/css/jquery.lightbox-0.5.css">
 	
     @RenderSection("PageCSS",false)
 	
@@ -32,7 +34,7 @@
 				</a>
 			</div>
 			<div class="listenlive">
-				<a href="/streaming-player/streaming-player.html" id="ListenLiveWindow">
+				<a href="/streaming-player/streaming-player.html" class="ListenLiveWindow">
 					<img src="/public/images/listenlive.png">
 				</a>
 			</div>
@@ -51,15 +53,34 @@
 	    @RenderBody() 
 
         <div id="footer-container">
+            <div id="bottom-banner">
+                <!-- begin ad tag -->
+
+			    <script type="text/javascript">
+
+			        //<![CDATA[
+
+			        ord = Math.random() * 10000000000000000;
+
+			        document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=' + ord + '?"><\/script>');
+
+			        //]]>
+
+			    </script>
+
+			    <noscript><a href="http://ad.doubleclick.net/jump/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=123456789?" border="0" alt="" /></a></noscript>
+
+			    <!-- end ad tag -->
+            </div>
             <ul>
 			    <li><a href="/podcasts">Podcasts+Video </a>&nbsp;|</li>
 			    <li><a href="http://www.nickandartiestuff.com/" target="_blank">Nick & Artie Gear </a>&nbsp;|</li>
 			    <li><a href="/meet">Meet Nick & Artie </a>&nbsp;|</li>
 			    <li><a href="/contactus">Contact Us</a></li>
 		    </ul>
-            <div>
-                <a href="" target="_blank"><img src="/public/images/twitter.png" /></a>&nbsp;&nbsp;
-                <a href="" target="_blank"><img src="/public/images/facebook.png" /></a>
+            <div id="bottom-banner-icons">
+                <a href="http://twitter.com/NickandArtie" target="_blank"><img src="/public/images/twitter.png" /></a>&nbsp;&nbsp;
+                <a href="http://www.facebook.com/TheNickandArtieShow" target="_blank"><img src="/public/images/facebook.png" /></a>
             </div>
         </div>
 	</div>
@@ -73,22 +94,28 @@
 	<script src="/public/javascripts/jquery.popupWindow.js"></script>  
 	<script src="/public/libraries/jPlayer/jquery.jplayer.min.js"></script>
 	<script src="/public/libraries/jPlayer/jplayer.playlist.min.js"></script>
+    <script src="/public/libraries/lightbox/js/jquery.lightbox-0.5.min.js"></script>
     <script src="/public/javascripts/jquery.equalheights.js"></script>
 	
 			<script type="text/javascript">
-			    $('#ListenLiveWindow').popupWindow({
+			    $('.ListenLiveWindow').popupWindow({
 			        height: 320,
 			        width: 370,
 			        top: 50,
 			        left: 50
 			    }); 
 			</script>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#PhotoReel a').lightBox(); // Select all links in object with gallery ID
+                    });
+            </script>
 			<script>
 			    $(function () {
 			        $("#slideshow").slides({
 			            preload: true,
-			            pause: 1000,
-			            play: 3000,
+			            pause: 3000,
+			            play: 6000,
 			            generatePagination: false
 			        });
 			    });
@@ -98,7 +125,7 @@
 			            join_text: "auto",
 			            username: "nickandartie",
 			            avatar_size: 35,
-			            count: 5,
+			            count: 3,
 			            loading_text: "loading tweets..."
 			        });
 			    });

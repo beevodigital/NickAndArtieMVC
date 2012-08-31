@@ -5,9 +5,9 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Create a new Podcast</h2>
 
-@using (Html.BeginForm()) {
+<form method="post" enctype="multipart/form-data">
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -17,8 +17,7 @@
             @Html.LabelFor(model => model.FileName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FileName)
-            @Html.ValidationMessageFor(model => model.FileName)
+            <input type="file" name="FileNameUpload"
         </div>
 
         <div class="editor-label">
@@ -65,7 +64,7 @@
             <input type="submit" value="Create" />
         </p>
     </fieldset>
-}
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

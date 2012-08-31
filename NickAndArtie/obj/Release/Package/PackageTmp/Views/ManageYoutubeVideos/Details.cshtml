@@ -1,0 +1,36 @@
+﻿@model NickAndArtie.Models.YoutubeVideo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>YouTube Details</h2>
+
+<fieldset>
+    <legend>YoutubeVideo</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Embed)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Embed)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.IsFeatured)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IsFeatured)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SortOrder)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SortOrder)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Manage.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Post Listing</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -20,9 +20,6 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DescriptionShort)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DescriptionLong)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.ImageLarge)
@@ -57,13 +54,10 @@
             @Html.DisplayFor(modelItem => item.DescriptionShort)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DescriptionLong)
+            <img src="@(item.ImageLarge)" width="250px" />
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageLarge)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ImageThumb)
+            <img src="@(item.ImageThumb)" width="250px" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.HeadingLong)

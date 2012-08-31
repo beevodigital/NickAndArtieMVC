@@ -13,5 +13,6 @@ namespace NickAndArtie.Models
         public DbSet<PhotoReel> PhotoReels { get; set; }
         public DbSet<RoadTrip> RoadTrips { get; set; }
         public DbSet<SlideShow> SlideShows { get; set; }
+        public DbSet<YoutubeVideo> YoutubeVideos { get; set; }
     }
 }

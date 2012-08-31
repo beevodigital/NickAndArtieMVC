@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using System.Web.Optimization;
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -39,12 +41,15 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Project name</a>
+          <a class="brand" href="/manage">Nick and Artie Administration</a>
           <div class="nav-collapse">
             <ul class="nav">
-              <li class="active"><a href="#">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><a href="/manageposts">Posts</a></li>
+              <li><a href="/managepodcasts">Podcasts</a></li>
+              <li><a href="/manageslideshows">Slideshows</a></li>
+                <li><a href="/managephotoreel">Photo Reel</a></li>
+                <li><a href="/manageyoutubevideos">YouTube Videos</a></li>
+                <li><a href="/manageroadtrips">Road Trips</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

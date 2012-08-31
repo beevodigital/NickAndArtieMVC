@@ -112,6 +112,12 @@ body{
 	height:450px;
 }
 
+
+.images_container img 
+{
+    width:200px;
+}
+
 /*** End of Photo Reel ***/
 
 /*** twitter-module ***/
@@ -196,6 +202,8 @@ body{
 	background-image:url('../images/roadhead.png');
 	width:115px;
 	height:89px;
+    background-repeat:no-repeat;
+    margin-left:40px;
 }
 
 .road-module-body
@@ -488,6 +496,14 @@ body{
     background-position:center;
     clear:both;
 }
+
+.row.fat
+{
+    background-image:url('/public/images/content-background.png');
+    background-repeat:repeat;
+    background-position:center;
+    clear:both;
+}
 /*** end of row home ***/
 
 /*** footer-container  ***/
@@ -501,7 +517,7 @@ body{
     color:#fff;
 }
 
-#footer-container img
+#footer-container-icons img
 {
     height:32px;
     width:31px;
@@ -510,7 +526,7 @@ body{
 
 #footer-container ul
 {
-	padding:115px 0 0 0;
+	padding:0 0 0 0;
 	text-align:center;
 	margin-left:210px;
 }
@@ -593,3 +609,26 @@ body{
 	background-image:url('../images/background_opaque.png');
 }
 /*** end of twitter-module ***/
+
+/***ContactContainer**/
+.ContactContainer {
+    text-align:center;
+    padding:25px;
+}
+
+.ContactContainer h1 {
+    font-size:22pt;
+    font-weight:bold;
+}
+
+.ContactContainer a {
+    color:#fff;
+}
+/***END ContactContainer**/
+
+#bottom-banner {
+    margin-left:100px;
+    padding-top:20px;
+    width:565px;
+    height:100px;
+}

@@ -8,6 +8,8 @@ using System.Web.Mvc;
 using System.Xml;
 using System.Xml.Linq;
 using NickAndArtie.Models;
+using Microsoft.WindowsAzure;
+using Microsoft.WindowsAzure.StorageClient;
 
 namespace NickAndArtie.Controllers
 {
@@ -75,6 +77,23 @@ namespace NickAndArtie.Controllers
         {
             if (ModelState.IsValid)
             {
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]);
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                CloudBlobContainer container = blobClient.GetContainerReference("podcasts");
+                container.CreateIfNotExist();
+                container.SetPermissions(
+                    new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }
+                );
+
+                if (Request.Files["FileNameUpload"].ContentLength > 0)
+                {
+                    string ThisGuid = Guid.NewGuid().ToString();
+                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    blob.Properties.ContentType = Request.Files["FileNameUpload"].ContentType;
+                    blob.UploadFromStream(Request.Files["FileNameUpload"].InputStream);
+                    podcast.FileName = blob.Uri.ToString();
+                }
+
                 db.Podcasts.Add(podcast);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -104,6 +123,23 @@ namespace NickAndArtie.Controllers
         {
             if (ModelState.IsValid)
             {
+                CloudStorageAccount storageAccount = CloudStorageAccount.Parse(System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]);
+                CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                CloudBlobContainer container = blobClient.GetContainerReference("podcasts");
+                container.CreateIfNotExist();
+                container.SetPermissions(
+                    new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }
+                );
+
+                if (Request.Files["FileNameUpload"].ContentLength > 0)
+                {
+                    string ThisGuid = Guid.NewGuid().ToString();
+                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    blob.Properties.ContentType = Request.Files["FileNameUpload"].ContentType;
+                    blob.UploadFromStream(Request.Files["FileNameUpload"].InputStream);
+                    podcast.FileName = blob.Uri.ToString();
+                }
+
                 db.Entry(podcast).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

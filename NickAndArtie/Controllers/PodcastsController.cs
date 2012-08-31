@@ -15,6 +15,7 @@ namespace NickAndArtie.Controllers
 
         public ActionResult Index()
         {
+            ViewBag.YoutubeVideos = db.YoutubeVideos.OrderBy(x => x.SortOrder).Take(5).ToList();
             ViewBag.Podcasts = db.Podcasts.OrderByDescending(x => x.DatePublished).Take(100).ToList();
             return View();
         }

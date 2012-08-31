@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Manage.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Edit Post</h2>
 
-@using (Html.BeginForm()) {
+<form method="post" enctype="multipart/form-data">
     @Html.ValidationSummary(true)
 
     <fieldset>
@@ -51,16 +51,18 @@
             @Html.LabelFor(model => model.ImageLarge)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ImageLarge)
-            @Html.ValidationMessageFor(model => model.ImageLarge)
+            @Html.HiddenFor(model => model.ImageLarge)
+            <img src="@(Model.ImageLarge)" width="200px" />
+            <input type="file" name="ImageLargeUpload" />
         </div>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.ImageThumb)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.ImageThumb)
-            @Html.ValidationMessageFor(model => model.ImageThumb)
+            @Html.HiddenFor(model => model.ImageThumb)
+            <img src="@(Model.ImageThumb)" width="200px" />
+            <input type="file" name="ImageThumbUpload" />
         </div>
 
         <div class="editor-label">
@@ -99,7 +101,7 @@
             <input type="submit" value="Save" />
         </p>
     </fieldset>
-}
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")

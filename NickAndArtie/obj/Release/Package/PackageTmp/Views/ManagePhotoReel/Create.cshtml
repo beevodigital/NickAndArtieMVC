@@ -1,0 +1,50 @@
+﻿@model NickAndArtie.Models.PhotoReel
+@using System.Web.Optimization;
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a new Photo</h2>
+
+<form method="post" enctype="multipart/form-data">
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>PhotoReel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageThumb)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="ImageThumbUpload" />
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ImageLarge)
+        </div>
+        <div class="editor-field">
+            <input type="file" name="ImageLargeUpload" />
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

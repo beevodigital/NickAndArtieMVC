@@ -75,7 +75,7 @@
 				<div id="twitter-body">
 				</div>
 				<div class="twitter-footer">
-					<a href="http://www.twitter.com" target="_blank">See More</a>
+					<a href="http://twitter.com/NickandArtie" target="_blank">See More</a>
 				</div>
 			</div>
 		</div>
@@ -110,7 +110,7 @@
                         foreach(var ThisItem in ThisPhotoReel)
                         {
                             <div class="images_container">
-						        <a href="@(ThisItem.ImageLarge)"><img src="@(ThisItem.ImageThumb)"/></a>
+						        <a href="@(ThisItem.ImageLarge)"><img src="@(ThisItem.ImageThumb)" alt="@(ThisItem.Title)"/></a>
 					        </div>
                         }
                     }
@@ -180,27 +180,19 @@
 			<div class="road-module-heading">
 			</div>
 			<div class="road-module-body">
-                <div class="road-item">
-				    <a href="">
-                        <div><strong>August 11</strong> - Hammond, IN</div>
-                        <div>Artie Lange, Dave Attell, Nick Di Paolo and host Jim Norton Anti-Social Comedy Tour</div>
-			        </a>
-                </div>
-                <div class="road-item">
-				    <a href="">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-			        </a>
-                </div>
-                <div class="road-item">
-				    <a href="">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-			        </a>
-                </div>
-                <div class="road-item">
-				    <a href="">
-                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-			        </a>
-                </div>
+                @{
+                    var TheseRoadTrips = (List<NickAndArtie.Models.RoadTrip>)ViewBag.RoadTrips;
+                    
+                    foreach(var ThisItem in TheseRoadTrips)
+                    {
+                        <div class="road-item">
+				            <a href="@(ThisItem.URL)" target="_blank">
+                                <div><strong>@(ThisItem.DateOfEvent.ToShortDateString())</strong> - @(ThisItem.Location)</div>
+                                <div>@(ThisItem.Title)</div>
+			                </a>
+                        </div>
+                    }
+                }
             </div>
 		</div>    
       </div>    

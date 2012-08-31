@@ -1,0 +1,47 @@
+﻿@model NickAndArtie.Models.YoutubeVideo
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create a new YouTube Video</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>YoutubeVideo</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Embed)
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.Embed, new { cols = 255, @rows = 15 })
+            @Html.ValidationMessageFor(model => model.Embed)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsFeatured)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsFeatured)
+            @Html.ValidationMessageFor(model => model.IsFeatured)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SortOrder)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SortOrder)
+            @Html.ValidationMessageFor(model => model.SortOrder)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
