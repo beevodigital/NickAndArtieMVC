@@ -11,6 +11,7 @@ using Microsoft.WindowsAzure.StorageClient;
 
 namespace NickAndArtie.Controllers
 {
+    [Authorize]
     public class ManagePostsController : Controller
     {
         private NickAndArtieDB db = new NickAndArtieDB();

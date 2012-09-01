@@ -44,3 +44,4 @@ C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.slidesho
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.cantrememerb.resources
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.YoutubeVideos.resources
 C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.Migrations.updates.resources
+C:\Projects\NickAndArtie\NickAndArtie\obj\Debug\NickAndArtie.csprojResolveAssemblyReference.cache

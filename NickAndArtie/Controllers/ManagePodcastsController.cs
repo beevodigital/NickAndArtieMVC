@@ -13,6 +13,7 @@ using Microsoft.WindowsAzure.StorageClient;
 
 namespace NickAndArtie.Controllers
 {
+    [Authorize]
     public class ManagePodcastsController : Controller
     {
         private NickAndArtieDB db = new NickAndArtieDB();

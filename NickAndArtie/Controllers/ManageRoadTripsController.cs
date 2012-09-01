@@ -9,6 +9,7 @@ using NickAndArtie.Models;
 
 namespace NickAndArtie.Controllers
 {
+    [Authorize]
     public class ManageRoadTripsController : Controller
     {
         private NickAndArtieDB db = new NickAndArtieDB();

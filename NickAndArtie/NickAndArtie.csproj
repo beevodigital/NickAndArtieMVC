@@ -545,6 +545,7 @@
     <Content Include="Views\ManageYoutubeVideos\Create.cshtml" />
     <Content Include="Views\ManageYoutubeVideos\Edit.cshtml" />
     <Content Include="Views\ManageYoutubeVideos\Delete.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">

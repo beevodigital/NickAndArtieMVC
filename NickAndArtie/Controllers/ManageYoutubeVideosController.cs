@@ -9,6 +9,7 @@ using NickAndArtie.Models;
 
 namespace NickAndArtie.Controllers
 {
+    [Authorize]
     public class ManageYoutubeVideosController : Controller
     {
         private NickAndArtieDB db = new NickAndArtieDB();
