@@ -77,6 +77,7 @@ namespace NickAndArtie.Controllers
         // POST: /ManageYoutubeVideos/Edit/5
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Edit(YoutubeVideo youtubevideo)
         {
             if (ModelState.IsValid)

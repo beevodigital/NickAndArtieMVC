@@ -14,6 +14,12 @@ namespace NickAndArtie
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Itunes",
+                url: "wp-content/podcast/feed.xml",
+                defaults: new { controller = "Podcasts", action = "Feed", id = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "AdminHome",
                 url: "manage",
                 defaults: new { controller = "ManagePosts", action = "Index", id = UrlParameter.Optional }

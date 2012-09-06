@@ -11,14 +11,15 @@
                         {
                             @:{
 					            @:title: "@ThisItem.Title",
-					            @:mp3: "@ThisItem.FileName"
+					            @:mp3: "@ThisItem.FileName",
+                                @:free:true
 					        @:},
                         }
                     }
 
 				], {
-				    swfPath: "../js",
-				    supplied: "oga, mp3",
+				    swfPath: "/public/libraries/jPlayer/",
+				    supplied: "mp3",
 				    wmode: "window"
 				});
 

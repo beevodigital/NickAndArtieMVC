@@ -574,7 +574,7 @@ body{
 .video-module
 {
 	background-image:url('../images/background_opaque.png');
-	width:200px;
+	width:600px;
 	margin:15px 0 0 12px;
 	padding:0 5px 5px 5px;
 	font-size:9pt;
@@ -585,7 +585,8 @@ body{
 	width:189px;
 	height:61px;
 	background-repeat:no-repeat;
-	margin-left:65px;
+    background-position:center center;
+	margin-left:205px;
 }
 
 .video-module-arrow
