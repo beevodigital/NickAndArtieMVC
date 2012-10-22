@@ -24,6 +24,12 @@ namespace NickAndArtie.Controllers
             return View();
         }
 
+        public ActionResult PopUp()
+        {
+            ViewBag.Podcasts = db.Podcasts.OrderByDescending(x => x.DatePublished).Take(100).ToList();
+            return View();
+        }
+
         public ActionResult Feed()
         {
             XNamespace itunesNS = "http://www.itunes.com/dtds/podcast-1.0.dtd";
@@ -61,7 +67,7 @@ namespace NickAndArtie.Controllers
                 item.Links.Add(new SyndicationLink()
                 {
                     Title = i.Title,
-                    Uri = new Uri(i.FileName),
+                    Uri = new Uri("http://www.nickandartie.com/load.mp3?url=" + i.FileName),
                     Length = 0,
                     MediaType = "audio/mpeg"
                 });

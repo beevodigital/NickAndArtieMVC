@@ -21,6 +21,41 @@ namespace NickAndArtie.Controllers
         //
         // GET: /ManagePodcasts/
 
+        public ActionResult FileNameCleanUp()
+        {
+            var getFiles = db.Podcasts.ToList();
+
+            foreach (var ThisFile in getFiles)
+            {
+                if (ThisFile.FileName != null && !ThisFile.FileName.ToString().EndsWith(".mp3"))
+                {
+                    Response.Write("<br/>" + ThisFile.FileName);
+
+                    //this needs cleaning up
+                    CloudStorageAccount storageAccount = CloudStorageAccount.Parse(System.Configuration.ConfigurationManager.AppSettings["AzureStorageConnectionString"]);
+                    CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();
+                    CloudBlobContainer container = blobClient.GetContainerReference("podcasts");
+                    container.CreateIfNotExist();
+                    container.SetPermissions(
+                        new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Blob }
+                    );
+
+                    CloudBlob blob = container.GetBlobReference(ThisFile.FileName);
+                    CloudBlob FixedBlob = container.GetBlobReference(ThisFile.FileName +".mp3");
+                    FixedBlob.CopyFromBlob(blob);
+
+                    ThisFile.FileName = ThisFile.FileName + ".mp3";
+                    db.Entry(ThisFile).State = EntityState.Modified;
+                    db.SaveChanges();
+                    //blob.Properties.ContentType = Request.Files["FileNameUpload"].ContentType;
+                    //blob.UploadFromStream(Request.Files["FileNameUpload"].InputStream);
+                    //podcast.FileName = blob.Uri.ToString();
+                }
+            }
+
+            return Content("done");
+        }
+
         public ActionResult Import()
         {
             XDocument ThisFeed = XDocument.Load("http://www.nickandartie.com/pickle/odplaylist.xml");
@@ -88,8 +123,12 @@ namespace NickAndArtie.Controllers
 
                 if (Request.Files["FileNameUpload"].ContentLength > 0)
                 {
-                    string ThisGuid = Guid.NewGuid().ToString();
-                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    //string ThisGuid = Guid.NewGuid().ToString();
+
+                    DateTime ThisShort = (DateTime)podcast.DatePublished;
+                    //string ThisFileName = ThisShort.ToShortDateString().ToString().Replace("/",".") + "-" + podcast.Title.Replace(" ", "-");
+
+                    CloudBlob blob = container.GetBlobReference(Request.Files["FileNameUpload"].FileName);
                     blob.Properties.ContentType = Request.Files["FileNameUpload"].ContentType;
                     blob.UploadFromStream(Request.Files["FileNameUpload"].InputStream);
                     podcast.FileName = blob.Uri.ToString();
@@ -134,8 +173,12 @@ namespace NickAndArtie.Controllers
 
                 if (Request.Files["FileNameUpload"].ContentLength > 0)
                 {
-                    string ThisGuid = Guid.NewGuid().ToString();
-                    CloudBlob blob = container.GetBlobReference(ThisGuid);
+                    //string ThisGuid = Guid.NewGuid().ToString();
+
+                    DateTime ThisShort = (DateTime)podcast.DatePublished;
+                    //string ThisFileName = ThisShort.ToShortDateString().ToString().Replace("/", ".") + "-" + podcast.Title.Replace(" ", "-").Replace(",","").Replace(".","");
+
+                    CloudBlob blob = container.GetBlobReference(Request.Files["FileNameUpload"].FileName);
                     blob.Properties.ContentType = Request.Files["FileNameUpload"].ContentType;
                     blob.UploadFromStream(Request.Files["FileNameUpload"].InputStream);
                     podcast.FileName = blob.Uri.ToString();

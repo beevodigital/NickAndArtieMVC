@@ -434,9 +434,10 @@ div.jp-type-playlist div.jp-playlist span.jp-free-media {
 	display:inline;
 	text-align:right;
 	margin-right:10px;
+    color:#ccc;
 }
 div.jp-type-playlist div.jp-playlist span.jp-free-media a{
-	color:#666;
+	color:#ccc;
 }
 div.jp-type-playlist div.jp-playlist span.jp-free-media a:hover{
 	color:#0d88c1;

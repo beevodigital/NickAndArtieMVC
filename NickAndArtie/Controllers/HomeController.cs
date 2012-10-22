@@ -23,6 +23,8 @@ namespace NickAndArtie.Controllers
             ViewBag.PhotoReel = db.PhotoReels.OrderByDescending(x => x.ID).Take(10).ToList();
             ViewBag.RoadTrips = db.RoadTrips.OrderBy(x => x.DateOfEvent).ToList();
 
+            ViewBag.RoadTrips2 = db.RoadTrips.OrderBy(x => x.DateOfEvent).ToList();
+
             return View();
         }
 

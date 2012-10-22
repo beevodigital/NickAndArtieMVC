@@ -10,6 +10,7 @@
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	
+
 	<link rel="stylesheet" href="/public/stylesheets/base.css">
 	<link rel="stylesheet" href="/public/stylesheets/skeleton.css">
 	<link rel="stylesheet" href="/public/stylesheets/layout.css">
@@ -18,12 +19,25 @@
 	<link rel="stylesheet" href="/public/libraries/ScrollBar/jquery.mCustomScrollbar.css">
 
     <link rel="stylesheet" href="/public/libraries/lightbox/css/jquery.lightbox-0.5.css">
-	
+
+
+
     @RenderSection("PageCSS",false)
 	
 	<!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-25716184-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
 </head>
 <body>
 	<div class="Navigation">
@@ -55,22 +69,14 @@
         <div id="footer-container">
             <div id="bottom-banner">
                 <!-- begin ad tag -->
-
-			    <script type="text/javascript">
-
-			        //<![CDATA[
-
-			        ord = Math.random() * 10000000000000000;
-
-			        document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=' + ord + '?"><\/script>');
-
-			        //]]>
-
-			    </script>
-
-			    <noscript><a href="http://ad.doubleclick.net/jump/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/prnd/prn-danpatrick;pos=top;prntype=web;prngenre=sports;prnpage=home;sz=728x90;u=pos*top!prntype*web!prngenre*sports!prnpage*home!sz*728x90;ord=123456789?" border="0" alt="" /></a></noscript>
-
-			    <!-- end ad tag -->
+                <script type="text/javascript">
+                    //<![CDATA[
+                    ord = Math.random() * 10000000000000000;
+                    document.write('<script type="text/javascript" src="http://ad.doubleclick.net/adj/prnd/prn-nick;pos=bottom;prntype=web;prngenre=sports;sz=728x90;u=pos*bottom!prntype*web!prngenre*sports!sz*728x90;ord=' + ord + '?"><\/script>');
+                    //]]>
+                </script>
+                <noscript><a href="http://ad.doubleclick.net/jump/prnd/prn-nick;pos=bottom;prntype=web;prngenre=sports;sz=728x90;u=pos*bottom!prntype*web!prngenre*sports!sz*728x90;ord=123456789?" target="_blank" ><img src="http://ad.doubleclick.net/ad/prnd/prn-nick;pos=bottom;prntype=web;prngenre=sports;prnpage=dannation;sz=728x90;u=pos*bottom!prntype*web!prngenre*sports!sz*728x90;ord=123456789?" border="0" alt="" /></a></noscript>
+                <!-- end ad tag -->
             </div>
             <ul>
 			    <li><a href="/podcasts">Podcasts+Video </a>&nbsp;|</li>
@@ -103,7 +109,15 @@
 			        width: 370,
 			        top: 50,
 			        left: 50
-			    }); 
+			    });
+
+			    $('.PopUpPlayer').popupWindow({
+			        height: 500,
+			        width:435,
+			        top: 50,
+			        left: 50,
+			        resizable: false
+			    });
 			</script>
                 <script type="text/javascript">
                     $(function () {
@@ -176,6 +190,53 @@
 			</script>
             @RenderSection("Playlist", false)
 
-            
+            <!-- OMNITURE TRACKING BEGIN --->
+            <script type="text/javascript">s_account = "ccpremiere,ccpremiere69";</script> 
+            <script type="text/javascript" src="http://common.prndigital.com/js/s_code.js" ></script> 
+            <script type="text/javascript">
+                s.pageName = "XXXXX:YYYYY"
+                s.prop3 = "YYYYY"
+                s.prop5 = "website"
+                s.prop6 = "NickAndArtie"
+                s.prop7 = "PREMIERE"
+                s.prop8 = "Sports"
+                s.prop10 = "XXXXX"
+                s.hier1 = "NickandArtie,PREMIERE"
+                s.hier2 = "NickandArtie,SPORTS"
+
+                /************* DO NOT ALTER ANYTHING BELOW THIS LINE ! **************/
+                var s_code = s.t(); if (s_code) document.write(s_code)
+            </script>
+            <!-- OMNITURE TRACKING END --->
+
+            <!-- Start Quantcast tag -->
+            <script type="text/javascript">
+                _qoptions = {
+                    qacct: "p-d8BTN2GVeWkVc",
+                    labels: "Premiere.NickandArtie"
+                };
+            </script>
+            <script type="text/javascript" src="http://edge.quantserve.com/quant.js"></script>
+            <noscript>
+            <img src="http://pixel.quantserve.com/pixel/p-d8BTN2GVeWkVc.gif" style="display: none;" border="0" height="1" width="1" alt="Quantcast"/>
+            </noscript>
+            <!-- End Quantcast tag -->
+
+            <!-- COPYRIGHT 2010 Nielsen Online -->
+            <script type="text/javascript">
+                (function () {
+                    var d = new Image(1, 1);
+                    d.onerror = d.onload = function () {
+                        d.onerror = d.onload = null;
+                    };
+                    d.src = ["//secure-us.imrworldwide.com/cgi-bin/m?ci=us-704373h&cg=0&cc=1&si=", escape(window.location.href), "&rp=", escape(document.referrer), "&ts=compact&rnd=", (new Date()).getTime()].join('');
+                })();
+            </script>
+            <noscript>
+            <div>
+            <img src="//secure-us.imrworldwide.com/cgi-bin/m?ci=us-704373h&amp;cg=0&amp;cc=1&amp;ts=noscript" width="1" height="1" alt="" />
+            </div>
+            </noscript>
+            <!-- END Nielsen Online SiteCensus V6.0 -->       
 </body>
 </html>

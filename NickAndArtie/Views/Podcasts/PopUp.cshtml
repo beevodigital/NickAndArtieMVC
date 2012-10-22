@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+@section Playlist{
+    @{ Html.RenderPartial("Playlist",(List<NickAndArtie.Models.Podcast>)ViewBag.Podcasts); }
+}
+
+@section PageCSS{
+    <link rel="stylesheet" href="/public/libraries/jPlayer/blue.monday/jplayer.blue.monday.large.css">
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Advanced Player</title>
+
+    <link rel="stylesheet" href="/public/stylesheets/nanda.css">
+    <link rel="stylesheet" href="/public/libraries/jPlayer/blue.monday/jplayer.blue.monday.large.css">
+</head>
+<body style="background-image:url('/public/images/center-content-bkg.png');background-repeat:repeat">
+    <div class="PodcastLargeContainer">
+        @{ Html.RenderPartial("PodcastLarge"); }
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script src="/public/libraries/jPlayer/jquery.jplayer.min.js"></script>
+	<script src="/public/libraries/jPlayer/jplayer.playlist.min.js"></script>
+
+    @{ Html.RenderPartial("Playlist",(List<NickAndArtie.Models.Podcast>)ViewBag.Podcasts); }
+</body>
+</html>

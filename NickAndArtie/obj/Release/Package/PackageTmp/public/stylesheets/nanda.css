@@ -258,6 +258,16 @@ body{
 	background-image:url('../images/content-background.png');
 }
 
+.shows-footer
+{
+	text-align:center;
+    padding:2px;
+}
+.shows-footer a
+{
+	color:#fff;
+}
+
 .shows-module-body li
 {
 	font-size:10pt;
@@ -574,7 +584,7 @@ body{
 .video-module
 {
 	background-image:url('../images/background_opaque.png');
-	width:200px;
+	width:600px;
 	margin:15px 0 0 12px;
 	padding:0 5px 5px 5px;
 	font-size:9pt;
@@ -585,7 +595,8 @@ body{
 	width:189px;
 	height:61px;
 	background-repeat:no-repeat;
-	margin-left:65px;
+    background-position:center center;
+	margin-left:205px;
 }
 
 .video-module-arrow
@@ -631,4 +642,15 @@ body{
     padding-top:20px;
     width:565px;
     height:100px;
+}
+
+.PodcastLargeContainer 
+{
+    background-image:url('/public/images/center-content-bkg.png');
+    background-repeat:repeat;
+}
+
+.large-container {
+    height:400px;
+    overflow:auto;
 }

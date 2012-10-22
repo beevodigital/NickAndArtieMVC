@@ -37,6 +37,8 @@
 				settings.windowURL = this.href || settings.windowURL;
 				var centeredY,centeredX;
 			
+				$("#jquery_jplayer_1").jPlayer("pause");
+
 				if(settings.centerBrowser){
 						
 					if ($.browser.msie) {//hacked together for IE browsers

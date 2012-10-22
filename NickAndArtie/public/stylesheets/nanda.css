@@ -258,6 +258,16 @@ body{
 	background-image:url('../images/content-background.png');
 }
 
+.shows-footer
+{
+	text-align:center;
+    padding:2px;
+}
+.shows-footer a
+{
+	color:#fff;
+}
+
 .shows-module-body li
 {
 	font-size:10pt;
@@ -632,4 +642,15 @@ body{
     padding-top:20px;
     width:565px;
     height:100px;
+}
+
+.PodcastLargeContainer 
+{
+    background-image:url('/public/images/center-content-bkg.png');
+    background-repeat:repeat;
+}
+
+.large-container {
+    height:400px;
+    overflow:auto;
 }
