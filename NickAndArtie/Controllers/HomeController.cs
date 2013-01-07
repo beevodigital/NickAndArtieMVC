@@ -25,6 +25,20 @@ namespace NickAndArtie.Controllers
 
             ViewBag.RoadTrips2 = db.RoadTrips.OrderBy(x => x.DateOfEvent).ToList();
 
+            var userAgent = Request.UserAgent.ToLower();
+            if (userAgent.Contains("iphone") || userAgent.Contains("android"))
+            {
+                ViewBag.IsMobile = true;
+            }
+            else if (userAgent.Contains("ipad"))
+            {
+                ViewBag.IsMobile = true;
+            }
+            else
+            {
+                ViewBag.IsMobile = false;
+            }
+            
             return View();
         }
 

@@ -1,6 +1,8 @@
 ﻿@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_NickAndArtie.cshtml";
+
+    bool IsMobile = (bool)ViewBag.IsMobile;
 }
 
 @section PageCSS{
@@ -28,27 +30,30 @@
 		<div class="slideshow" id="slideshow">
 			<div class="slides_container">
                 @{
-                    var SlideShowImages = (List<NickAndArtie.Models.SlideShow>)ViewBag.SlideShowImages;
-                    
-                    foreach(var ThisItem in SlideShowImages)
+                    if(!IsMobile)
                     {
-                        if(ThisItem.IsListenLive)
+                        var SlideShowImages = (List<NickAndArtie.Models.SlideShow>)ViewBag.SlideShowImages;
+                    
+                        foreach(var ThisItem in SlideShowImages)
                         {
-                            <div>
-					            <a href="@(ThisItem.ImageDestination)" class="ListenLiveWindow"><img src="@(ThisItem.ImageLarge)"></a>
-				            </div>
-                        }
-                        else if(ThisItem.ImageDestination != "")
-                        {
-                            <div>
-					            <a href="@(ThisItem.ImageDestination)"><img src="@(ThisItem.ImageLarge)"></a>
-				            </div>
-                        }
-                        else
-                        {
-                            <div>
-					            <img src="@(ThisItem.ImageLarge)">
-				            </div>   
+                            if(ThisItem.IsListenLive)
+                            {
+                                <div>
+					                <a href="@(ThisItem.ImageDestination)" class="ListenLiveWindow"><img src="@(ThisItem.ImageLarge)"></a>
+				                </div>
+                            }
+                            else if(ThisItem.ImageDestination != "")
+                            {
+                                <div>
+					                <a href="@(ThisItem.ImageDestination)"><img src="@(ThisItem.ImageLarge)"></a>
+				                </div>
+                            }
+                            else
+                            {
+                                <div>
+					                <img src="@(ThisItem.ImageLarge)">
+				                </div>   
+                            }
                         }
                     }
                 }
@@ -88,13 +93,16 @@
 			<div class="photo-module-body">
 				<div id="PhotoReel" class="content">
                     @{
-                        var ThisPhotoReel = (List<NickAndArtie.Models.PhotoReel>)ViewBag.PhotoReel;
-                        
-                        foreach(var ThisItem in ThisPhotoReel)
+                        if(!IsMobile)
                         {
-                            <div class="images_container">
-						        <a href="@(ThisItem.ImageLarge)"><img src="@(ThisItem.ImageThumb)" alt="@(ThisItem.Title)"/></a>
-					        </div>
+                            var ThisPhotoReel = (List<NickAndArtie.Models.PhotoReel>)ViewBag.PhotoReel;
+                        
+                            foreach(var ThisItem in ThisPhotoReel)
+                            {
+                                <div class="images_container">
+						            <a href="@(ThisItem.ImageLarge)"><img src="@(ThisItem.ImageThumb)" alt="@(ThisItem.Title)"/></a>
+					            </div>
+                            }
                         }
                     }
 					
@@ -109,6 +117,12 @@
 
         @{
             var ThesePosts = (List<NickAndArtie.Models.Post>)ViewBag.Posts;
+            
+            if(IsMobile)
+            {
+                ThesePosts = ThesePosts.Take(2).ToList();
+            }
+            
             foreach (var ThisItem in ThesePosts)
             {
                 <div class="feature-column-item">
@@ -158,18 +172,21 @@
 			</div>
 			<div class="road-module-body">
                 @{
-                    var TheseRoadTrips = (List<NickAndArtie.Models.RoadTrip>)ViewBag.RoadTrips;
-                    
-                    foreach(var ThisItem in TheseRoadTrips)
+                    if (!IsMobile)
                     {
+                            var TheseRoadTrips = (List<NickAndArtie.Models.RoadTrip>)ViewBag.RoadTrips;
+
+                            foreach (var ThisItem in TheseRoadTrips)
+                            {
                         <div class="road-item">
 				            <a href="@(ThisItem.URL)" target="_blank">
                                 <div><strong>@(ThisItem.DateOfEvent.ToShortDateString())</strong> - @(ThisItem.Location)</div>
                                 <div>@(ThisItem.Title)</div>
 			                </a>
                         </div>
+                            }
+                        }
                     }
-                }
             </div>
 		</div>    
       </div>    

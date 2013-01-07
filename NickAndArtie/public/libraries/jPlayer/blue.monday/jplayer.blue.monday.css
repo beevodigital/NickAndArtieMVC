@@ -31,7 +31,8 @@ div.jp-video {
 	position:relative;
 }
 div.jp-audio {
-	width:199px;
+	/*width:199px;*/
+    width:100%;
 }
 div.jp-video-270p {
 	width:480px;
