@@ -4,6 +4,10 @@ body{
 	font-family:arial, helvetica;
 }
 
+#UnderContructionContainer img {
+    width:100%;
+}
+
 .centered-container
 {
 	max-width:960px;
@@ -132,7 +136,7 @@ body{
 .twitter-module-heading
 {
 	background-image:url('../images/twitterhead.png');
-	width:189px;
+	width:195px;
 	height:61px;
 }
 
@@ -169,9 +173,9 @@ body{
 .photo-module-heading
 {
 	background-image:url('../images/photohead.png');
-	width:139px;
+	width:150px;
 	height:42px;
-	margin-left:30px;
+	margin-left:25px;
 	padding-bottom:5px;
 	background-repeat:no-repeat;
 }
@@ -393,7 +397,7 @@ body{
 {
 	text-align:center;
 	background-image:url('../images/content-background.png');
-	height:1050px;
+	height:1150px;
 }
 
 #meet-body
@@ -411,7 +415,6 @@ body{
 
 .bio-column
 {
-    width:280px;
     float:left;
     margin:10px;
 }

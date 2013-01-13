@@ -138,6 +138,7 @@
     <Compile Include="Controllers\MeetController.cs" />
     <Compile Include="Controllers\PodcastsController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\UtilityController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -211,6 +212,7 @@
     <Content Include="public\images\boxarrow_solid.png" />
     <Content Include="public\images\cambria.png" />
     <Content Include="public\images\center-content-bkg.png" />
+    <Content Include="public\images\closed.jpg" />
     <Content Include="public\images\color-logo-no-glow.png" />
     <Content Include="public\images\content-background.png" />
     <Content Include="public\images\devilscut_ad.jpg" />
@@ -552,6 +554,7 @@
     <Content Include="Views\ManageYoutubeVideos\Delete.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Podcasts\PopUp.cshtml" />
+    <Content Include="Views\Utility\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201208251546287_Initial.resx">
